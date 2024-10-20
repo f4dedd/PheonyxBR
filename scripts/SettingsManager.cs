@@ -128,7 +128,7 @@ public partial class SettingsManager : Control
 			Phoenyx.Settings.SimpleHUD = (bool)data["simple_hud"];
             Phoenyx.Settings.AbsoluteInput = (bool)data["absolute_mode"];
 			Phoenyx.Settings.UnlockFPS = (bool)data["unlock_fps"];
-			Phoenyx.Settings.SetFPS((double)data["fps"]);
+			Phoenyx.Settings.FPS = (double)data["fps"];
 
 			UpdateSettings();
 
@@ -259,10 +259,12 @@ public partial class SettingsManager : Control
 				Phoenyx.Settings.MissPopups = (bool)value;
 				break;
 			case "FPS":
-				Phoenyx.Settings.SetFPS((double)value);
+				Phoenyx.Settings.FPS = (double)value;
+				Engine.MaxFps = Phoenyx.Settings.UnlockFPS ? 0 : Convert.ToInt32(value);
 				break;
 			case "UnlockFPS":
 				Phoenyx.Settings.UnlockFPS = (bool)value;
+				Engine.MaxFps = Phoenyx.Settings.UnlockFPS ? 0 : Convert.ToInt32(Phoenyx.Settings.FPS);
 				break;
 		}
 

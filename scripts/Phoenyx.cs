@@ -6,7 +6,6 @@ using Godot;
 using Godot.Collections;
 using System.Collections.Generic;
 using System.Reflection;
-using System.Text.Encodings.Web;
 
 public partial class Phoenyx : Node
 {
@@ -69,13 +68,6 @@ public partial class Phoenyx : Node
         public static bool MissPopups {get; set;} = true;
         public static double FPS {get; set;} = 240;
         public static bool UnlockFPS {get; set;} = false;
-
-        public static void SetFPS(double value)
-        {
-            var fps = Convert.ToInt32(value);
-            Engine.MaxFps = UnlockFPS ? fps : 0;
-            FPS = fps;
-        }
 
         public static void Save(string profile = null)
         {
