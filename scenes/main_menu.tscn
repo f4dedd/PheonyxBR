@@ -446,6 +446,14 @@ theme = SubResource("Theme_m671i")
 text = "PLAY"
 alignment = 0
 
+[node name="Multiplayer" type="Button" parent="Menus/Main/Buttons"]
+visible = false
+layout_mode = 2
+focus_mode = 0
+theme = SubResource("Theme_m671i")
+text = "MULTIPLAYER"
+alignment = 0
+
 [node name="Settings" type="Button" parent="Menus/Main/Buttons"]
 layout_mode = 2
 focus_mode = 0
@@ -978,6 +986,12 @@ max_length = 5
 context_menu_enabled = false
 flat = true
 caret_blink = true
+
+[node name="Multiplayer" type="Panel" parent="Menus"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Extras" type="Panel" parent="Menus"]
 visible = false
